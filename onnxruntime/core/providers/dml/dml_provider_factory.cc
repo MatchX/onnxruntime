@@ -86,12 +86,12 @@ std::shared_ptr<IExecutionProviderFactory> CreateExecutionProviderFactory_DML(in
 #endif
 
   ComPtr<IDMLDevice> dml_device;
-  THROW_IF_FAILED(DMLCreateDevice1(d3d12_device.Get(),
-                                   flags,
-                                   DML_FEATURE_LEVEL_2_0,
-                                   IID_PPV_ARGS(&dml_device)));
+  // THROW_IF_FAILED(DMLCreateDevice1(d3d12_device.Get(),
+  //                                  flags,
+  //                                  DML_FEATURE_LEVEL_2_0,
+  //                                  IID_PPV_ARGS(&dml_device)));
 
-  
+
   return CreateExecutionProviderFactory_DML(dml_device.Get(), cmd_queue.Get());
 }
 
